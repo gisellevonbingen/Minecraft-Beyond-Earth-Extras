@@ -14,5 +14,5 @@ Can use in modpacks under license
 
 # Special Thanks
 
-* MrScautHD - https://github.com/MrScautHD
-* NotBarracuda - https://github.com/SomeoneIs404
+* MrScautHD - https://github.com/MrScautHD
+* NotBarracuda - https://github.com/SomeoneIs404

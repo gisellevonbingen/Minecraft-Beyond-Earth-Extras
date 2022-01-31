@@ -1,0 +1,14 @@
+{
+	"block.beyond_earth_extras.space_station_creator": "Space Station Creator",
+	"gui.beyond_earth_extras.space_station_creator.title": "Space Station Creator",
+	"gui.beyond_earth_extras.space_station_creator.choice_type": "Choice type",
+	"gui.beyond_earth_extras.space_station_creator.screenshot": "Screenshot",
+	"gui.beyond_earth_extras.space_station_creator.screenshot_not_provied": "Screenshot not provided",
+	"gui.beyond_earth_extras.space_station_creator.description": "Description",
+	"gui.beyond_earth_extras.space_station_creator.cancel": "Cancel",
+	"gui.beyond_earth_extras.space_station_creator.done": "Done",
+	
+	"space_station_type.beyond_earth_extras.builtin.name": "Built-in",
+	"space_station_type.beyond_earth_extras.builtin.desc": "1. Default type\n2. Default type\n3. Default type",
+	"_eof": "eof"
+}

@@ -1,0 +1,17 @@
+{
+	"structure": "beyond_earth:space_station",
+	"anchor": {
+		"x": -15,
+		"y": -24,
+		"z": -10
+	},
+	"screenshot": {
+		"file": "beyond_earth_extras:builtin",
+		"width": 583,
+		"height": 328
+	},
+	"filter": {
+		"mode": "beyond_earth_extras:blacklist",
+		"list": []
+	}
+}

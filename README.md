@@ -1,4 +1,5 @@
 # Beyond-Earth-Extras
+
 Addon mod for space station
 
 * 1.18 - https://github.com/gisellevonbingen/Minecraft-Beyond-Earth-Extras/tree/1.18
@@ -12,5 +13,6 @@ MIT and while 'Beyond Earth' allows
 Can use in modpacks under license
 
 # Special Thanks
+
 * MrScautHD - https://github.com/MrScautHD
 * NotBarracuda - https://github.com/SomeoneIs404

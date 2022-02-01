@@ -26,7 +26,7 @@ public class SpaceStationTypeManager extends SimpleJsonResourceReloadListener
 	public static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 	public static final SpaceStationTypeManager INSTANCE = new SpaceStationTypeManager();
 
-	private Map<ResourceLocation, SpaceStationType> byName = ImmutableMap.of();
+	private Map<ResourceLocation, SpaceStationType> byIds = ImmutableMap.of();
 
 	public SpaceStationTypeManager()
 	{
@@ -62,14 +62,19 @@ public class SpaceStationTypeManager extends SimpleJsonResourceReloadListener
 		LOGGER.info("Loaded {} space station types", (int) map.size());
 	}
 
+	public SpaceStationType byId(ResourceLocation id)
+	{
+		return this.byIds.get(id);
+	}
+
 	public Map<ResourceLocation, SpaceStationType> toMap()
 	{
-		return this.byName;
+		return this.byIds;
 	}
 
 	public void onSyncMessage(Map<ResourceLocation, SpaceStationType> byName)
 	{
-		this.byName = Collections.unmodifiableMap(byName);
+		this.byIds = Collections.unmodifiableMap(byName);
 	}
 
 }

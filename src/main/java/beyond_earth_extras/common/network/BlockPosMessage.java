@@ -1,5 +1,6 @@
 package beyond_earth_extras.common.network;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
@@ -13,7 +14,7 @@ public class BlockPosMessage extends AbstractMessage
 
 	public BlockPosMessage()
 	{
-		this.setBlockPos(null);
+		this.setBlockPos(BlockPos.ZERO);
 	}
 
 	public BlockPosMessage(BlockPos pos)
@@ -24,25 +25,13 @@ public class BlockPosMessage extends AbstractMessage
 	@Override
 	public void decode(FriendlyByteBuf buffer)
 	{
-		if (buffer.readBoolean() == true)
-		{
-			this.setBlockPos(buffer.readBlockPos());
-		}
-
+		this.setBlockPos(buffer.readBlockPos());
 	}
 
 	@Override
 	public void encode(FriendlyByteBuf buffer)
 	{
-		BlockPos blockPos = this.getBlockPos();
-		boolean notNull = blockPos != null;
-		buffer.writeBoolean(notNull);
-
-		if (notNull == true)
-		{
-			buffer.writeBlockPos(blockPos);
-		}
-
+		buffer.writeBlockPos(this.getBlockPos());
 	}
 
 	@Override
@@ -67,7 +56,7 @@ public class BlockPosMessage extends AbstractMessage
 		return this.blockPos;
 	}
 
-	public void setBlockPos(BlockPos pos)
+	public void setBlockPos(@Nonnull BlockPos pos)
 	{
 		this.blockPos = pos;
 	}

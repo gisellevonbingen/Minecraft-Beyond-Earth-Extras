@@ -24,6 +24,7 @@ public class BEENetwork
 	{
 		registerMessage(SpaceStationTypeSyncMessage.class, SpaceStationTypeSyncMessage::new);
 		registerMessage(SpaceStationCreatorOpenMessage.class, SpaceStationCreatorOpenMessage::new);
+		registerMessage(SpaceStationCreatorDoneMessage.class, SpaceStationCreatorDoneMessage::new);
 	}
 
 	public static <T extends AbstractMessage> void registerMessage(Class<T> messageType, Supplier<T> supplier)
@@ -47,35 +48,50 @@ public class BEENetwork
 		messageID++;
 	}
 
-	public static void send(ServerPlayer player, AbstractMessage message)
+	public static void sendToServer(AbstractMessage message)
+	{
+		PacketTarget target = PacketDistributor.SERVER.noArg();
+		CHANNEL.send(target, message);
+	}
+
+	public static void sendToServer(AbstractMessage... messages)
+	{
+		for (AbstractMessage message : messages)
+		{
+			sendToServer(message);
+		}
+
+	}
+
+	public static void sendToPlayer(ServerPlayer player, AbstractMessage message)
 	{
 		PacketTarget target = PacketDistributor.PLAYER.with(() -> player);
 		CHANNEL.send(target, message);
 	}
 
-	public static void send(ServerPlayer player, AbstractMessage... messages)
+	public static void sendToPlayer(ServerPlayer player, AbstractMessage... messages)
 	{
 		for (AbstractMessage message : messages)
 		{
-			send(player, message);
+			sendToPlayer(player, message);
 		}
 
 	}
 
-	public static void send(Collection<ServerPlayer> players, AbstractMessage message)
+	public static void sendToPlayer(Collection<ServerPlayer> players, AbstractMessage message)
 	{
 		for (ServerPlayer player : players)
 		{
-			send(player, message);
+			sendToPlayer(player, message);
 		}
 
 	}
 
-	public static void send(Collection<ServerPlayer> players, AbstractMessage... messages)
+	public static void sendToPlayer(Collection<ServerPlayer> players, AbstractMessage... messages)
 	{
 		for (AbstractMessage message : messages)
 		{
-			send(players, message);
+			sendToPlayer(players, message);
 		}
 
 	}

@@ -5,6 +5,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 
 import beyond_earth_extras.client.gui.SpaceStationTypeSelectionList.SpaceStationTypeEntry;
 import beyond_earth_extras.common.BeyondEarthExtras;
+import beyond_earth_extras.common.network.BEENetwork;
+import beyond_earth_extras.common.network.SpaceStationCreatorDoneMessage;
 import beyond_earth_extras.common.spacestation.Screenshot;
 import beyond_earth_extras.common.spacestation.SpaceStationType;
 import net.minecraft.client.gui.Font;
@@ -175,6 +177,13 @@ public class SpaceStationCreatorScreen extends Screen
 	{
 		if (button == this.getCancelButton())
 		{
+			this.onClose();
+		}
+		else if (button == this.getDoenButton())
+		{
+			SpaceStationTypeEntry entry = this.list.getSelected();
+			ResourceLocation id = entry.getType().getId();
+			BEENetwork.sendToServer(new SpaceStationCreatorDoneMessage(this.getPos(), id));
 			this.onClose();
 		}
 

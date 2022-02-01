@@ -1,5 +1,15 @@
 {
 	"block.beyond_earth_extras.space_station_creator": "우주 정거장 생성기",
-	"space_station_type.beyond_earth_extras.builtin": "내장",
+	"gui.beyond_earth_extras.space_station_creator.title": "우주 정거장 생성기",
+	"gui.beyond_earth_extras.space_station_creator.choice_type": "종류 선택",
+	"gui.beyond_earth_extras.space_station_creator.screenshot": "스크린샷",
+	"gui.beyond_earth_extras.space_station_creator.screenshot_not_provied": "스크린샷 제공되지 않음",
+	"gui.beyond_earth_extras.space_station_creator.description": "설명",
+	"gui.beyond_earth_extras.space_station_creator.cancel": "취소",
+	"gui.beyond_earth_extras.space_station_creator.done": "확인",
+	"space_station_type.beyond_earth_extras.builtin.name": "기본",
+	"space_station_type.beyond_earth_extras.builtin.desc": "Beyond Earth에 내장된 기본형",
+	"space_station_type.beyond_earth_extras.none.name": "최소",
+	"space_station_type.beyond_earth_extras.none.desc": "가장 작고, 간단한 형태",
 	"_eof": "eof"
 }

@@ -3,12 +3,12 @@
 	"anchor": {
 		"x": -15,
 		"y": -24,
-		"z": -10
+		"z": -15
 	},
 	"screenshot": {
 		"file": "beyond_earth_extras:builtin",
-		"width": 583,
-		"height": 328
+		"width": 595,
+		"height": 335
 	},
 	"filter": {
 		"mode": "beyond_earth_extras:blacklist",

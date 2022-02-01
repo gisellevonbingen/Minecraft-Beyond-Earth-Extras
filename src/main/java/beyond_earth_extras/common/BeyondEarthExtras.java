@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import beyond_earth_extras.common.block.BEEBlocks;
+import beyond_earth_extras.common.content.CommonEventHandler;
 import beyond_earth_extras.common.network.BEENetwork;
 import beyond_earth_extras.common.network.SpaceStationTypeSyncMessage;
 import beyond_earth_extras.common.spacestation.SpaceStationTypeManager;
@@ -32,6 +33,7 @@ public class BeyondEarthExtras
 		IEventBus forge_bus = MinecraftForge.EVENT_BUS;
 		forge_bus.addListener(BeyondEarthExtras::onResourceReload);
 		forge_bus.addListener(BeyondEarthExtras::onDatapackSyncEvent);
+		forge_bus.register(CommonEventHandler.class);
 
 		BEENetwork.registerAll();
 	}
@@ -50,11 +52,11 @@ public class BeyondEarthExtras
 
 		if (targetedPlayer != null)
 		{
-			BEENetwork.send(targetedPlayer, message);
+			BEENetwork.sendToPlayer(targetedPlayer, message);
 		}
 		else
 		{
-			BEENetwork.send(event.getPlayerList().getPlayers(), message);
+			BEENetwork.sendToPlayer(event.getPlayerList().getPlayers(), message);
 		}
 
 	}

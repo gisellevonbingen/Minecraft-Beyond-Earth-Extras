@@ -23,7 +23,7 @@ public class SpaceStationCreatorBlock extends Block
 	{
 		if (player instanceof ServerPlayer)
 		{
-			BEENetwork.send((ServerPlayer) player, new SpaceStationCreatorOpenMessage(pos));
+			BEENetwork.sendToPlayer((ServerPlayer) player, new SpaceStationCreatorOpenMessage(pos));
 			return InteractionResult.CONSUME;
 		}
 		else

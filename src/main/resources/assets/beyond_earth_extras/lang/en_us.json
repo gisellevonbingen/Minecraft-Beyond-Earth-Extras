@@ -7,8 +7,9 @@
 	"gui.beyond_earth_extras.space_station_creator.description": "Description",
 	"gui.beyond_earth_extras.space_station_creator.cancel": "Cancel",
 	"gui.beyond_earth_extras.space_station_creator.done": "Done",
-	
 	"space_station_type.beyond_earth_extras.builtin.name": "Built-in",
-	"space_station_type.beyond_earth_extras.builtin.desc": "1. Default type\n2. Default type\n3. Default type",
+	"space_station_type.beyond_earth_extras.builtin.desc": "Beyond Earth Built-in type",
+	"space_station_type.beyond_earth_extras.none.name": "Empty",
+	"space_station_type.beyond_earth_extras.none.desc": "Simply, Minimal",
 	"_eof": "eof"
 }
